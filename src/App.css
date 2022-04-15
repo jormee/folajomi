@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster+Two:ital@0;1&family=Poppins:wght@300&display=swap');
+
+* {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  top: 0;
+  left: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  width: 90%;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.layout {
+  min-height: 300vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+header {
+  background-color: black;
+  color: #cac4ca;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+header .logo {
+  width: 30%;
+  font-family: 'Lobster Two';
+  font-size: 40px;
+  letter-spacing: .3rem;
+  margin: 1rem 0 0;
+  animation: gradient 3s ease infinite forwards;
+}
+
+header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header .nav-bar {
+  width: 30%;
+}
+
+header .nav-bar .nav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+}
+
+header .nav-bar .nav-list .nav-item {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+header .nav-bar .nav-list .nav-item:hover::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #cac4ca;
+  animation: line .6s ease forwards;
+}
+
+/* Footer Section styles */
+
+footer {
+  position: relative;
+  background-color: black;
+  color: #C4CACE;
+  font-family: Poppins sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/Vector.png');
+  background-size: cover;
+  background-position: top left;
+}
+
+footer .section-title {
+  font-size: 1.5rem;
+  margin: 0 auto 2rem;
+}
+
+footer p {
+  margin: 2rem auto;
+}
+
+footer .socials {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0;
+  list-style: none;
+  margin: 1rem auto 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+footer .socials .medium {
+  margin-right: 2rem;
 }
 
-@keyframes App-logo-spin {
+footer .socials .medium:last-child {
+  margin-right: 0;
+}
+
+footer .socials .medium a{
+  color: #C4CACE;
+  font-size: 2rem;
+}
+
+
+/* header animation */
+
+@keyframes line {
   from {
-    transform: rotate(0deg);
+    width: 0;
   }
+
   to {
-    transform: rotate(360deg);
+    width: 100%;
   }
 }

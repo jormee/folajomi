@@ -1,0 +1,140 @@
+
+
+/* Hero Section styles */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background-color: black;
+  background-image: url(../../vectors/Vector-1.png), url(../../vectors/Vector-2.png), url(../../vectors/Vector-3.png), url(../../vectors/Vector.png);
+  background-repeat: no-repeat;
+  background-position: bottom right, bottom left, top right, top left;
+  background-size: 150px 250px;
+  color: #cac4ca;
+}
+
+.hero .hero-text {
+  position: relative;
+  width: 20%;
+  margin: auto;
+  padding: 23% 0;
+  font-size: 2rem;
+  font-family: "Kaushan Script", cursive;
+  font-weight: 400;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #C4CACE -16.07%, #7B61FF 50.34%, #C4CACE 139.68%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 3rem;
+  animation: point-down 1.5s .3s infinite forwards;
+}
+
+/* Portfolio Section Styles */
+
+#porfolio {
+  min-height: 100vh;
+}
+
+.section-title {
+  font-family: 'Lobster Two', cursive;
+  font-size: 3rem;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio .project-card {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 3rem;
+  margin: 1rem auto 4rem;
+}
+
+.portfolio .project-card:nth-of-type(even) .project-img {
+  order: 3;
+  grid-column: 7/span 2;
+}
+
+.portfolio .project-card:nth-of-type(even) .project-details {
+  order: 2;
+}
+
+.portfolio .project-card:nth-of-type(even) .project-number {
+  order: 1;
+  grid-column: 1/span 2;
+}
+
+.project-card .project-img {
+  grid-area: "image";
+  grid-column: 1/span 2;
+  max-width: 100%;
+}
+
+.project-card .project-details {
+  grid-area: "details";
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  grid-column: 3/span 4
+}
+
+.project-name {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  text-align: justify;
+}
+
+.project-tags {
+  font-style: italic;
+  font-weight: bold;
+  color: rgba(0,0,0,.5);
+}
+
+.project-number {
+  grid-area: "number";
+  grid-column: 7/span 2;
+  font-size: 5rem;
+  font-weight: bold;
+  color: rgba(0,0,0,.2);
+  text-align: center;
+  padding: 3rem 0;
+}
+
+
+/* Page Animations */
+@keyframes point-down {
+  0% {
+    bottom: 5rem;
+    opacity: 0;
+  }
+
+  50% {
+    bottom: 2rem;
+    opacity: 1;
+  }
+
+  100% {
+    bottom: 5rem;
+    opacity: 0;
+  }
+}
