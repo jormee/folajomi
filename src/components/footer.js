@@ -4,7 +4,7 @@ const Footer = () => {
 
   return(
     <footer>
-      <div className="contact" id="contact">
+      <div className="contact" id="contact-me">
         <h2 className="section-title">Would you like to work togther?</h2>
         <p>Shoot me a message on any of the following</p>
         <ul className="socials">

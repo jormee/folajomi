@@ -58,39 +58,57 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  list-style-type: none;
+  margin-left: 0;
+  padding: 0;
+  opacity: 0;
+  animation: fade 6s .5s ease forwards;
 }
+
 
 .portfolio .project-card {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 3rem;
   margin: 1rem auto 4rem;
+  position: relative;
 }
 
-.portfolio .project-card:nth-of-type(even) .project-img {
+.portfolio .project-card::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #C4CACE;
+  position: absolute;
+  top: 110%;
+  left: 0;
+}
+
+.portfolio li:nth-of-type(even) .project-img {
   order: 3;
   grid-column: 7/span 2;
 }
 
-.portfolio .project-card:nth-of-type(even) .project-details {
+.portfolio li:nth-of-type(even) .project-details {
   order: 2;
 }
 
-.portfolio .project-card:nth-of-type(even) .project-number {
+.portfolio li:nth-of-type(even) .portfolio-icon {
   order: 1;
   grid-column: 1/span 2;
 }
 
 .project-card .project-img {
-  grid-area: "image";
   grid-column: 1/span 2;
   max-width: 100%;
+  height: 100%;
 }
 
 .project-card .project-details {
-  grid-area: "details";
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  grid-column: 3/span 4
+  grid-column: 3/span 4;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-name {
@@ -108,23 +126,43 @@
   font-style: italic;
   font-weight: bold;
   color: rgba(0,0,0,.5);
+  display: flex;
 }
 
-.project-number {
-  grid-area: "number";
-  grid-column: 7/span 2;
-  font-size: 5rem;
+.project-tags li {
+  margin-right: 0.5rem;
+}
+
+.project-links {
+  margin-top: 1rem;
+}
+
+.project-links a{
+  margin-right: 2rem;
+  color: #7B61FF;
+  text-decoration: none;
   font-weight: bold;
+  transition: font-size .5s ease;
+}
+
+.project-links a:hover {
+  font-size: 1.1rem;
+}
+
+.portfolio-icon {
+  grid-column: 7/span 2;
+  font-size: 7rem;
   color: rgba(0,0,0,.2);
   text-align: center;
-  padding: 3rem 0;
+  align-self: center;
+  margin: auto;
 }
 
 
 /* Page Animations */
 @keyframes point-down {
   0% {
-    bottom: 5rem;
+    bottom: 3rem;
     opacity: 0;
   }
 
@@ -134,7 +172,17 @@
   }
 
   100% {
-    bottom: 5rem;
+    bottom: 3rem;
     opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

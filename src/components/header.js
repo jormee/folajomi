@@ -12,9 +12,9 @@ const Header = () => {
           <Link to="/"><h1 className="logo grow">FOLAJOMI</h1></Link>
           <nav className="nav-bar">
             <ul className="nav-list">
-              <li className="nav-item"><Link to="/portfolio">Portfolio</Link></li>
-              <li className="nav-item"><Link to="/blog">Blog</Link></li>
-              <li className="nav-item"><Link to="/contact-me">Contact</Link></li>
+              <li className="nav-item"><a href="#portfolio">Portfolio</a></li>
+              <li className="nav-item"><a href="https://blog.folajomi.dev">Blog</a></li>
+              <li className="nav-item"><a href="#contact-me">Contact</a></li>
             </ul>
           </nav>
         </div>
